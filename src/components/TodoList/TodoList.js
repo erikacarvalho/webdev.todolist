@@ -1,17 +1,12 @@
 import './TodoList.css';
-import React, {useEffect, useState} from "react";
+import React, {useEffect} from "react";
 
-const todolist = [
-  {id: 1, isDone: false, name: "do the dishes"},
-  {id: 2, idDone: false, name: "buy a new charger for smartwatch"}
-]
-
-const TodoList = () => {
-  const [todos, setTodos] = useState(todolist);
+const TodoList = (props) => {
   useEffect(() => {
 // TODO: filter what is done and what is not
   }, []);
 
+  const todos = props.todos
   if (!todos) {
     return 'loading...';
   }

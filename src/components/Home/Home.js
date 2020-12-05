@@ -1,13 +1,13 @@
 import './Home.css';
-import {React} from "react";
 import {Link} from "react-router-dom";
 import TodoList from "../TodoList/TodoList";
+import React from "react";
 
-function Home() {
+function Home(props) {
   return (
     <main>
       <h2>your minimalist to-do list</h2>
-      <TodoList/>
+      <TodoList todos={props.todos} setTodos={props.setTodos}/>
       <p><Link to="/add">add new to-do link goes here</Link></p>
     </main>
   );

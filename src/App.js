@@ -1,3 +1,4 @@
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import './App.css';
 import AddTodo from "./components/AddTodo/AddTodo";
 import Footer from "./components/Footer/Footer";
@@ -8,9 +9,19 @@ import React from "react";
 function App() {
   return (
     <>
-      <Header/>
-      <Home/>
-      <AddTodo/>
+      <Router>
+        <Header/>
+        <Switch>
+          <Route path="/add">
+            <AddTodo/>
+          </Route>
+          <Route path="/home">
+            <Home/>
+          </Route>
+          <Route exact path="/" component={Home}>
+          </Route>
+        </Switch>
+      </Router>
       <Footer/>
     </>
   );

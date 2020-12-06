@@ -40,6 +40,14 @@ this is how _minimalist todolist_ looks in its most recent version:
 
 ![application thumbnail with style](public/todolist-with-style.png)
 
+### initial data
+
+I decided to leave some to-dos already created but they can be easily removed following this steps:
+1. mark all to-dos as done
+2. remove all to-dos
+
+after doing this, you should be able to read: `there are no to-dos yet. go ahead and add one!`.
+
 ## project overview
 
 this project was bootstrapped using [Create React App](https://github.com/facebook/create-react-app).

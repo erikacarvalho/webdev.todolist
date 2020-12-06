@@ -1,14 +1,24 @@
 import './TodoList.css';
-import React, {useEffect} from "react";
+import React from "react";
 
 const TodoList = (props) => {
-  useEffect(() => {
-// TODO: filter what is done and what is not
-  }, []);
-
   const todos = props.todos
-  if (!todos) {
-    return 'loading...';
+  const setTodos = props.setTodos
+  const cmp = ( a, b ) => {
+    return a.isDone < b.isDone ? -1 : 1
+  }
+  const deleteItem = (id) => {
+    let result = todos.filter((item) => item.id !== id)
+    setTodos(result);
+  }
+  const markItem = (id) => {
+    let result = todos.map((item) =>{
+      if (item.id === id) {
+        item.isDone = !item.isDone
+      }
+      return item
+    })
+    setTodos(result);
   }
 
   if (todos.length === 0) {
@@ -18,9 +28,14 @@ const TodoList = (props) => {
   return (
     <ul>
       {todos
-        ? todos.map((todo) => (
+        ? todos.sort(cmp).map((todo) => (
           <li key={todo.id} className="todo-list-item">
+              <input onClick={() => markItem(todo.id)} type="checkbox" defaultChecked={todo.isDone} name=""/>
             {todo.name}
+            {todo.isDone
+              ? <button onClick={() => deleteItem(todo.id)}>remove to-do</button>
+              : ""
+            }
           </li>
         ))
         : "loading..."}

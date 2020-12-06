@@ -1,6 +1,6 @@
 import './AddTodo.css';
 import React, {useState} from "react";
-import {useHistory} from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 
 function AddTodo(props) {
   const [newTodo, setNewTodo] = useState('');
@@ -25,12 +25,12 @@ function AddTodo(props) {
           onChange={event => setNewTodo(event.target.value)}
           name="name"
           type="text"
-          placeholder="new to-do"
+          placeholder="insert here..."
           required
         />
         <button
           type="submit"
-          className="header-button"
+          className="add-button"
         >
           add to-do
         </button>

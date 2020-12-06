@@ -22,7 +22,7 @@ const TodoList = (props) => {
   }
 
   if (todos.length === 0) {
-    return 'there are no to-dos yet';
+    return 'there are no to-dos yet. go ahead and add one!';
   }
 
   return (
@@ -31,7 +31,7 @@ const TodoList = (props) => {
         ? todos.sort(cmp).map((todo) => (
           <li key={todo.id} className="todo-list-item">
               <input onClick={() => markItem(todo.id)} type="checkbox" defaultChecked={todo.isDone} name=""/>
-            {todo.name}
+            <span>{todo.name}</span>
             {todo.isDone
               ? <button onClick={() => deleteItem(todo.id)}>remove to-do</button>
               : ""

@@ -8,7 +8,15 @@ function Home(props) {
     <main>
       <h2>your minimalist to-do list</h2>
       <TodoList todos={props.todos} setTodos={props.setTodos}/>
-      <p><Link to="/add">add new to-do link goes here</Link></p>
+      <p>
+        <Link to="/add" className="animated">
+          <span>+ NEW TO-DO</span>
+          <svg width="13px" height="10px" viewBox="0 0 13 10">
+            <path d="M1,5 L11,5"></path>
+            <polyline points="8 1 12 5 8 9"></polyline>
+          </svg>
+        </Link>
+      </p>
     </main>
   );
 }

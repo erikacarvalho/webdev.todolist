@@ -2,12 +2,9 @@ import './Footer.css';
 
 function Footer() {
   return (
-    <>
-      <footer>
-        <hr/>
-        <p id="footer-content">2020 todolist</p>
-      </footer>
-    </>
+    <footer>
+      <p id="footer-content">2020 © feito com s2 - todolist</p>
+    </footer>
   );
 }
 

@@ -1,15 +1,17 @@
 import './AddTodo.css';
 import React, {useState} from "react";
+import {useHistory} from "react-router-dom";
 
 function AddTodo(props) {
   const [newTodo, setNewTodo] = useState('');
   const todos = props.todos
   const newID = todos.length + 1
+  const history = useHistory();
 
   const addTodo = (event) => {
     event.preventDefault();
     todos.push({id: newID, isDone: false, name: newTodo});
-    // TODO: redirect to HOME
+    history.push("/");
   }
 
   return (

@@ -5,11 +5,12 @@ import {useHistory} from "react-router-dom";
 function AddTodo(props) {
   const [newTodo, setNewTodo] = useState('');
   const todos = props.todos
-  const newID = todos.length + 1
   const history = useHistory();
 
   const addTodo = (event) => {
     event.preventDefault();
+    const newID = props.id + 1
+    props.setID(newID)
     todos.push({id: newID, isDone: false, name: newTodo});
     history.push("/");
   }

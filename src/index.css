@@ -1,0 +1,121 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  display: grid;
+  background-image: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
+  background-repeat: no-repeat;
+  padding: 20px;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 1.1em;
+  color: #000000cc;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#root {
+  border-radius: 20px;
+  border: 1px solid #ffffff44;
+  padding: 0 20px;
+  background-color: #ffffff88;
+}
+
+h1 {
+  font-family: Concert One, serif;
+  font-weight: bolder;
+  font-size: 4em;
+  color: #ffffff;
+  text-shadow: 7px 7px #c471ed;
+  text-decoration: none;
+}
+
+h2 {
+  font-family: Concert One, serif;
+  font-weight: bolder;
+  font-size: 1.8em;
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #f191a1;
+  padding: 5px;
+}
+
+hr {
+  padding: 0;
+  border: 1px solid #ffffff44;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  margin: 4px;
+  padding: 4px;
+}
+
+main {
+  background-color: #ffffffaa;
+  border-radius: 20px;
+  border: 1px solid #ffffff66;
+  padding: 10px;
+}
+
+.animated {
+  color: #000000aa;
+  cursor: default;
+  margin-left: 40px;
+  position: relative;
+  padding: 4px 12px;
+  transition: all 0.2s ease;
+}
+.animated:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border-radius: 28px;
+  background: rgba(196, 113, 237, 0.9);
+  width: 70px;
+  height: 38px;
+  transition: all 0.4s ease;
+}
+.animated span {
+  position: relative;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+.animated svg {
+  position: relative;
+  top: 0;
+  margin-left: 2px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #000000aa;
+  stroke-width: 2;
+  transform: translateX(-8px);
+  transition: all 0.4s ease;
+}
+.animated:hover:before {
+  width: 100%;
+  background: rgba(196, 113, 237, 0.9);
+}
+.animated:hover svg {
+  transform: translateX(0);
+}
+.animated:active {
+  transform: scale(0.96);
+}
+
+/*outras opções de cores:*/
+/*#be93c5, #7bc6cc*/
+
